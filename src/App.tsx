@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
-import PasswordReset from './components/PasswordReset';
-import UpdatePassword from './components/UpdatePassword';
+import PasswordReset from './src/components/PasswordReset';
+import UpdatePassword from './src/components/UpdatePassword';
 import Login from './pages/Login';
 import Home from './pages/Home';
 import ThcLinks from './pages/ThcLinks';
