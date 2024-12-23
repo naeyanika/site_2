@@ -44,14 +44,6 @@ export default function App() {
               </PrivateRoute>
             }
           />
-          <Route
-            path="/update-password-account"
-            element={
-            <PrivateRoute>
-             <UpdateAccountPassword />
-            </PrivateRoute>
-            }
-          />
         <Route path="/reset-password" element={<PasswordReset />} />
         <Route path="/update-password" element={<UpdatePassword />} />
         <Route path="*" element={<Navigate to="/login" replace />} />
