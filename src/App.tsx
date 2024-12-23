@@ -52,9 +52,9 @@ export default function App() {
             </PrivateRoute>
             }
           />
-          <Route path="*" element={<Navigate to="/login" replace />} />
         <Route path="/reset-password" element={<PasswordReset />} />
         <Route path="/update-password" element={<UpdatePassword />} />
+        <Route path="*" element={<Navigate to="/login" replace />} />
         </Routes>
       </BrowserRouter>
     </AuthProvider>
