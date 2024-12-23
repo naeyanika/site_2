@@ -1,12 +1,12 @@
-import { useState } from 'react';
-import { supabase } from './supabaseClient'; // Pastikan ini sesuai dengan path Anda
+import { useState, FormEvent } from 'react';
+import { supabase } from '../supabaseClient';
 
 const PasswordReset = () => {
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
-  const [loading, setLoading] = useState(false);
+  const [email, setEmail] = useState<string>('');
+  const [message, setMessage] = useState<string>('');
+  const [loading, setLoading] = useState<boolean>(false);
 
-  const handleResetPassword = async (e) => {
+  const handleResetPassword = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
       setLoading(true);
@@ -18,7 +18,7 @@ const PasswordReset = () => {
       
       setMessage('Silakan cek email Anda untuk link reset password');
       setEmail('');
-    } catch (error) {
+    } catch (error: any) {
       setMessage(error.message);
     } finally {
       setLoading(false);
