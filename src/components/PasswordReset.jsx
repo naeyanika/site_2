@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { supabase } from '../supabaseClient'; // Pastikan ini sesuai dengan path Anda
+import { supabase } from './supabaseClient'; // Pastikan ini sesuai dengan path Anda
 
 const PasswordReset = () => {
   const [email, setEmail] = useState('');
