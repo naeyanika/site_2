@@ -31,7 +31,7 @@ export function LoginForm() {
           <div className="bg-blue-600 p-3 rounded-full mb-4">
             <Lock className="w-6 h-6 text-white" />
           </div>
-          <h1 className="text-2xl font-bold text-gray-900">Welcome back</h1>
+          <h1 className="text-2xl font-bold text-gray-900">Hello Auditor's!</h1>
           <p className="text-gray-600 mt-1">Please sign in to continue</p>
         </div>
 
