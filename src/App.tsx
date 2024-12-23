@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
-import PasswordReset from './src/components/PasswordReset';
-import UpdatePassword from './src/components/UpdatePassword';
+import PasswordReset from './components/PasswordReset';
+import UpdatePassword from './components/UpdatePassword';
 import Login from './pages/Login';
 import Home from './pages/Home';
 import ThcLinks from './pages/ThcLinks';
@@ -19,8 +19,6 @@ export default function App() {
     <AuthProvider>
       <BrowserRouter>
         <Routes>
-          <Route path="/reset-password" element={<PasswordReset />} />
-          <Route path="/update-password" element={<UpdatePassword />} />
           <Route path="/login" element={<Login />} />
           <Route
             path="/"
@@ -47,6 +45,8 @@ export default function App() {
             }
           />
           <Route path="*" element={<Navigate to="/login" replace />} />
+        <Route path="/reset-password" element={<PasswordReset />} />
+        <Route path="/update-password" element={<UpdatePassword />} />
         </Routes>
       </BrowserRouter>
     </AuthProvider>
