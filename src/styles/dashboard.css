@@ -1,0 +1,142 @@
+/* Dashboard styles */
+:root {
+    --background: hsl(0, 0%, 100%);
+    --foreground: hsl(240, 10%, 3.9%);
+    --card: hsl(0, 0%, 100%);
+    --card-foreground: hsl(240, 10%, 3.9%);
+    --primary: hsl(240, 5.9%, 10%);
+    --radius: 0.5rem;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+    padding: 15px;
+    margin-bottom: 1rem;
+}
+
+.menu-item {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    color: var(--card-foreground);
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 150px;
+}
+
+.menu-item:hover {
+    transform: translateY(-5px);
+}
+
+.menu-item h3 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    color: var(--primary);
+}
+
+.menu-item p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.no-underline {
+    text-decoration: none;
+    color: inherit;
+}
+
+.no-underline:hover {
+    color: inherit;
+    text-decoration: none;
+}
+
+section {
+    margin: 1,5rem 0;
+    width: 100%;
+    display: block;
+}
+
+section + section{
+  margin-top: 2rem;
+  padding-top: 1rem;
+}
+
+section h2 {
+    padding: 0 15px;
+    margin-bottom: 0.75rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.header-button {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  font-size: 16px;
+  border: none;
+  background: none;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  position: relative;
+  margin: 0 0.5rem;
+}
+
+.header-button::before {
+  margin-left: auto;
+}
+
+.header-button::after,
+.header-button::before {
+  content: '';
+  width: 0%;
+  height: 2px;
+  background: #000000;
+  display: block;
+  transition: 0.5s;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.header-button:hover::after,
+.header-button:hover::before {
+  width: 100%;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-bottom: 2rem;
+  margin-bottom: auto;
+  max-width: 1280px;
+  margin:0 auto;
+
+}
+
+footer {
+  width: 100%;
+  background: white;
+  position: relative;
+  margin-top: auto;
+  border-top: 1px solid #e5e7eb;
+}
+
+
+.min-h-screen {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+section:last-child {
+  margin-bottom: 2rem;
+}
