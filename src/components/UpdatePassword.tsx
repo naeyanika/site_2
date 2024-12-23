@@ -1,14 +1,14 @@
-import { useState, useEffect } from 'react';
-import { supabase } from './supabaseClient';
+import { useState, FormEvent } from 'react';
+import { supabase } from '../supabaseClient';
 import { useNavigate } from 'react-router-dom';
 
 const UpdatePassword = () => {
-  const [password, setPassword] = useState('');
-  const [message, setMessage] = useState('');
-  const [loading, setLoading] = useState(false);
+  const [password, setPassword] = useState<string>('');
+  const [message, setMessage] = useState<string>('');
+  const [loading, setLoading] = useState<boolean>(false);
   const navigate = useNavigate();
 
-  const handleUpdatePassword = async (e) => {
+  const handleUpdatePassword = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
       setLoading(true);
@@ -19,11 +19,10 @@ const UpdatePassword = () => {
       if (error) throw error;
       
       setMessage('Password berhasil diubah!');
-      // Redirect ke halaman login setelah 2 detik
       setTimeout(() => {
         navigate('/login');
       }, 2000);
-    } catch (error) {
+    } catch (error: any) {
       setMessage(error.message);
     } finally {
       setLoading(false);
