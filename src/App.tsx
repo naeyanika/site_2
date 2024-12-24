@@ -21,6 +21,8 @@ export default function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/reset-password" element={<ResetPassword />} />
           <Route path="/update-password" element={<UpdatePassword />} />
+          {/* Add a new route that includes the hash */}
+          <Route path="/update-password/*" element={<UpdatePassword />} />
           <Route
             path="/"
             element={
