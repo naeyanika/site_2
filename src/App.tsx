@@ -8,7 +8,6 @@ import Home from './pages/Home';
 import ThcLinks from './pages/ThcLinks';
 import Tutorials from './pages/Tutorials';
 
-
 function PrivateRoute({ children }: { children: React.ReactNode }) {
   const { isAuthenticated } = useAuth();
   return isAuthenticated ? <>{children}</> : <Navigate to="/login" />;
@@ -46,7 +45,7 @@ export default function App() {
               </PrivateRoute>
             }
           />
-        <Route path="*" element={<Navigate to="/login" replace />} />
+          <Route path="*" element={<Navigate to="/login" replace />} />
         </Routes>
       </BrowserRouter>
     </AuthProvider>
