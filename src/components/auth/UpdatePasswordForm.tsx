@@ -15,7 +15,7 @@ export function UpdatePasswordForm() {
 
   // Extract access token from URL
   useEffect(() => {
-    const hashParams = new URLSearchParams(location.hash.substring(1));
+    const hashParams = new URLSearchParams(window.location.hash.substring(1));
     const accessToken = hashParams.get('access_token');
     
     if (accessToken) {
@@ -25,7 +25,7 @@ export function UpdatePasswordForm() {
         refresh_token: '',
       });
     }
-  }, [location]);
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
