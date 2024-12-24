@@ -20,7 +20,7 @@ export function ResetPasswordForm() {
 
     try {
       const { error } = await supabase.auth.resetPasswordForEmail(email, {
-        redirectTo: `${window.location.origin}/update-password`,
+        redirectTo: `https://ia-databse.online/update-password`,
       });
 
       if (error) throw error;
