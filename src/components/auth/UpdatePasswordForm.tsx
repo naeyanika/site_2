@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { Input } from '../ui/Input';
 import { Button } from '../ui/Button';
 import { Lock } from 'lucide-react';
@@ -11,6 +11,21 @@ export function UpdatePasswordForm() {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
+
+  // Extract access token from URL
+  useEffect(() => {
+    const hashParams = new URLSearchParams(location.hash.substring(1));
+    const accessToken = hashParams.get('access_token');
+    
+    if (accessToken) {
+      // Set the session with the access token
+      supabase.auth.setSession({
+        access_token: accessToken,
+        refresh_token: '',
+      });
+    }
+  }, [location]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -30,6 +45,8 @@ export function UpdatePasswordForm() {
 
       if (error) throw error;
 
+      // Clear the URL hash
+      window.history.replaceState(null, '', window.location.pathname);
       navigate('/login');
     } catch (err: any) {
       setError(err.message || 'An error occurred');
