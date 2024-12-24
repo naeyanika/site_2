@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
 import { Input } from '../ui/Input';
 import { Button } from '../ui/Button';
@@ -31,7 +31,7 @@ export function LoginForm() {
           <div className="bg-blue-600 p-3 rounded-full mb-4">
             <Lock className="w-6 h-6 text-white" />
           </div>
-          <h1 className="text-2xl font-bold text-gray-900">Hello Auditor's!</h1>
+          <h1 className="text-2xl font-bold text-gray-900">Hey, Auditor's!</h1>
           <p className="text-gray-600 mt-1">Please sign in to continue</p>
         </div>
 
@@ -65,7 +65,13 @@ export function LoginForm() {
           </Button>
         </form>
 
-        <div className="mt-6 text-center">
+        <div className="mt-6 text-center space-y-2">
+          <Link 
+            to="/reset-password"
+            className="text-sm text-blue-600 hover:text-blue-700 block"
+          >
+            Forgot your password?
+          </Link>
           <p className="text-sm text-gray-600">
             Contact your administrator for access
           </p>
