@@ -12,7 +12,6 @@
   width: 190px;
   height: 254px;
   margin: 0 auto;
-  margin-top: 20px;
 }
 
 .card {
@@ -26,6 +25,8 @@
   border: 1px solid #232323;
   transition: all .5s ease-in-out;
   overflow: hidden;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .card-hidden {
