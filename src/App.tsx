@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
-import PasswordReset from './components/PasswordReset';
-import UpdatePassword from './components/UpdatePassword';
 import Login from './pages/Login';
+import ResetPassword from './pages/ResetPassword';
+import UpdatePassword from './pages/UpdatePassword';
 import Home from './pages/Home';
 import ThcLinks from './pages/ThcLinks';
 import Tutorials from './pages/Tutorials';
@@ -20,6 +20,8 @@ export default function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/login" element={<Login />} />
+          <Route path="/reset-password" element={<ResetPassword />} />
+          <Route path="/update-password" element={<UpdatePassword />} />
           <Route
             path="/"
             element={
@@ -44,8 +46,6 @@ export default function App() {
               </PrivateRoute>
             }
           />
-        <Route path="/reset-password" element={<PasswordReset />} />
-        <Route path="/update-password" element={<UpdatePassword />} />
         <Route path="*" element={<Navigate to="/login" replace />} />
         </Routes>
       </BrowserRouter>
