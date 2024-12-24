@@ -129,6 +129,13 @@ export default function Home() {
                 <p>Pengolahan data ini bertujuan untuk mengecek pencairan renovasi rumah, sesuai ketentuan atau tidaknya.</p>
               </div>
             </a>
+
+            <a href="https://danaresiko.streamlit.app/" target="_blank" className="no-underline">
+              <div className="menu-item">
+                <h3>Anomali Danaresiko</h3>
+                <p>Pengolahan data ini bertujuan untuk mengecek data anggota dan yang diajukan danaresiko.</p>
+              </div>
+            </a>
           </div>
         </section>
         
