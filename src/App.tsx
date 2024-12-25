@@ -7,6 +7,7 @@ import UpdatePassword from './pages/UpdatePassword';
 import Home from './pages/Home';
 import ThcLinks from './pages/ThcLinks';
 import Tutorials from './pages/Tutorials';
+import CompanyRegulations from './pages/CompanyRegulations';
 
 function PrivateRoute({ children }: { children: React.ReactNode }) {
   const { isAuthenticated } = useAuth();
@@ -42,6 +43,14 @@ export default function App() {
             element={
               <PrivateRoute>
                 <Tutorials />
+              </PrivateRoute>
+            }
+          />
+           <Route
+            path="/company-regulations"
+            element={
+              <PrivateRoute>
+                <CompanyRegulations />
               </PrivateRoute>
             }
           />
