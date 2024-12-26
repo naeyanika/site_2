@@ -22,8 +22,8 @@ export default function CompanyRegulations() {
     <div className="min-h-screen bg-gray-50">
       <Navbar title="Company Regulations" />
       
-      <div className="container mx-auto px-4 pt-8 pb-8">
-        <div className="search-container mb-6">
+      <div className="container mx-auto px-4 pt-8">
+        <div className="search-container mb-8">
           <SearchBar value={searchQuery} onChange={setSearchQuery} />
         </div>
 
