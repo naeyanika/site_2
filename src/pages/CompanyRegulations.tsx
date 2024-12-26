@@ -22,23 +22,25 @@ export default function CompanyRegulations() {
     <div className="min-h-screen bg-gray-50">
       <Navbar title="Company Regulations" />
       
-      <div className="container mx-auto px-4 pt-8">
-        <div className="search-container mb-8">
-          <SearchBar value={searchQuery} onChange={setSearchQuery} />
-        </div>
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="pt-16 pb-4"> {/* Reduced top padding */}
+          <div className="search-container">
+            <SearchBar value={searchQuery} onChange={setSearchQuery} />
+          </div>
 
-        {filteredDocuments.length === 0 ? (
-          <div className="text-center text-gray-500 mt-8">
-            No documents match your search
-          </div>
-        ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredDocuments.map((doc) => (
-              <DocumentCard key={doc.id} document={doc} />
-            ))}
-          </div>
-        )}
-      </div>
+          {filteredDocuments.length === 0 ? (
+            <div className="text-center text-gray-500 mt-8">
+              No documents match your search
+            </div>
+          ) : (
+            <div className="documents-grid mt-6"> {/* Added margin top */}
+              {filteredDocuments.map((doc) => (
+                <DocumentCard key={doc.id} document={doc} />
+              ))}
+            </div>
+          )}
+        </div>
+      </main>
     </div>
   );
 }
