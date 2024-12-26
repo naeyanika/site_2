@@ -374,7 +374,7 @@ export const documents = [
     "fileUrl": "https://drive.google.com/file/d/16rQcdNDrddEx7FIKZ0Myhz6DH9HdSbmh/view?usp=drive_link",
     "keywords": [
       "service",
-      " bbm",
+      " motor",
       " admin",
       " mis"
     ]
