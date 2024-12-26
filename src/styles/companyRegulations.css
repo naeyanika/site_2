@@ -3,7 +3,8 @@
   position: relative;
   box-sizing: border-box;
   width: fit-content;
-  margin: auto; /* Tambahkan margin atas-bawah 20px */
+  margin: 0 auto;
+  padding: 20px;
 }
 
 .mainbox {
