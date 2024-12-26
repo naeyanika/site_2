@@ -40,6 +40,7 @@ export function DocumentCard({ document }: DocumentCardProps) {
         </a>
         <a
           href={`${document.fileUrl}&export=download`}
+          target='_blank'
           className="flex items-center gap-1 px-3 py-1.5 text-sm font-medium text-blue-600 bg-blue-50 rounded-md hover:bg-blue-100 transition-colors"
         >
           <Download className="w-4 h-4" />
