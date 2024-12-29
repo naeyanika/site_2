@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Bell, X } from 'lucide-react';
 
 interface AnnouncementPopupProps {
@@ -14,6 +14,14 @@ export function AnnouncementPopup({
   onView, 
   onDismiss 
 }: AnnouncementPopupProps) {
+  const [isVisible, setIsVisible] = useState(true);
+
+  const handleDismiss = () => {
+    setIsVisible(false);
+    onDismiss?.();
+  };
+
+  if (!isVisible) return null;
 
   return (
     <div
@@ -40,7 +48,10 @@ export function AnnouncementPopup({
       <div className="mt-6 sm:flex sm:gap-4">
         {onView && (
           <button
-            onClick={onView}
+            onClick={() => {
+              onView();
+              handleDismiss();
+            }}
             className="inline-block w-full rounded-lg bg-blue-600 px-5 py-3 text-center text-sm font-semibold text-white hover:bg-blue-700 sm:w-auto"
           >
             View Details
@@ -48,7 +59,7 @@ export function AnnouncementPopup({
         )}
 
         <button
-          onClick={onDismiss}
+          onClick={handleDismiss}
           className="mt-2 inline-block w-full rounded-lg bg-gray-100 px-5 py-3 text-center text-sm font-semibold text-gray-800 hover:bg-gray-200 sm:mt-0 sm:w-auto"
         >
           Dismiss
