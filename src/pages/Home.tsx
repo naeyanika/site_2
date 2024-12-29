@@ -12,6 +12,7 @@ export default function Home() {
 
    useEffect(() => {
     const seen = localStorage.getItem('announcementSeen');
+    console.log('Initial localStorage check:', seen);
     if (seen === 'true') {
       setShowAnnouncement(false);
     }
