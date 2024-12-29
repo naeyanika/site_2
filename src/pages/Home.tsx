@@ -25,11 +25,15 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col">
-          <AnnouncementPopup
+      { showAnnouncement && (
+      <AnnouncementPopup
         title="New update!"
         message="There is a new update regarding company regulations, it is now accessible. Click 'View Details' to learn more about the changes."
         onView={handleViewUpdate}
-    />
+        onDismiss={handleDismiss}
+        />
+        )}
+      
       <nav className="bg-white shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16">
