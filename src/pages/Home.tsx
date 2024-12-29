@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useAuth } from '../contexts/AuthContext';
 import { Link, useNavigate } from 'react-router-dom';
 import { AnnouncementPopup } from '../components/AnnouncementPopup';
@@ -8,10 +8,15 @@ import '../styles/dashboard.css';
 export default function Home() {
   const { logout } = useAuth();
   const navigate = useNavigate();
-  const [showAnnouncement, setShowAnnouncement] = useState(() => {
-    return !localStorage.getItem('announcementSeen');
-  });
+  const [showAnnouncement, setShowAnnouncement] = useState(true);
 
+   useEffect(() => {
+    const seen = localStorage.getItem('announcementSeen');
+    if (seen === 'true') {
+      setShowAnnouncement(false);
+    }
+  }, []);
+  
   const handleViewUpdate = () => {
     localStorage.setItem('announcementSeen', 'true');
     setShowAnnouncement(false);
