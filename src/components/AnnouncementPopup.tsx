@@ -40,7 +40,7 @@ export function AnnouncementPopup({
       <div className="mt-6 sm:flex sm:gap-4">
         {onView && (
           <button
-            onClick={onView}}
+            onClick={onView}
             className="inline-block w-full rounded-lg bg-blue-600 px-5 py-3 text-center text-sm font-semibold text-white hover:bg-blue-700 sm:w-auto"
           >
             View Details
