@@ -8,16 +8,26 @@ import '../styles/dashboard.css';
 export default function Home() {
   const { logout } = useAuth();
   const navigate = useNavigate();
+  const [showAnnouncement, setShowAnnouncement] = useState(() => {
+    return !localStorage.getItem('announcementSeen');
+  });
 
   const handleViewUpdate = () => {
+    localStorage.setItem('announcementSeen', 'true');
+    setShowAnnouncement(false);
     navigate('/company-regulations'); //menavigasi ke update terbaru  
+  };
+
+  const handleDismiss = () => {
+    localStorage.setItem('announcementSeen', 'true');
+    setShowAnnouncement(false);
   };
 
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col">
           <AnnouncementPopup
-        title="New Company Regulation Update!"
-        message="Important updates have been made to the company regulations. Click 'View Details' to learn more about the changes."
+        title="New update!"
+        message="There is a new update regarding company regulations, it is now accessible. Click 'View Details' to learn more about the changes."
         onView={handleViewUpdate}
     />
       <nav className="bg-white shadow-sm">
