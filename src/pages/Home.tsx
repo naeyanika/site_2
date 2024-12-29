@@ -6,8 +6,20 @@ import '../styles/dashboard.css';
 
 export default function Home() {
   const { logout } = useAuth();
+  const navigate = useNavigate();
+
+  const handleViewUpdate = () => {
+    navigate('/company-regulations') //menavigasi ke update terbaru  
+  };
 
   return (
+    <div className="min-h-screen bg-gray-100 flex flex-col">
+    <AnnouncementPopup
+        title="New Company Regulation Update!"
+        message="Important updates have been made to the company regulations. Click 'View Details' to learn more about the changes."
+        onView={handleViewUpdate}
+    />
+    
     <div className="min-h-screen bg-gray-100 flex flex-col">
       <nav className="bg-white shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
