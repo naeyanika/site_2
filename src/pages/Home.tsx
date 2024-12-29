@@ -14,13 +14,11 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col">
-    <AnnouncementPopup
+          <AnnouncementPopup
         title="New Company Regulation Update!"
         message="Important updates have been made to the company regulations. Click 'View Details' to learn more about the changes."
         onView={handleViewUpdate}
     />
-    
-    <div className="min-h-screen bg-gray-100 flex flex-col">
       <nav className="bg-white shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16">
