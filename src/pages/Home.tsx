@@ -10,7 +10,7 @@ export default function Home() {
   const navigate = useNavigate();
 
   const handleViewUpdate = () => {
-    navigate('/company-regulations') //menavigasi ke update terbaru  
+    navigate('/company-regulations'); //menavigasi ke update terbaru  
   };
 
   return (
