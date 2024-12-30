@@ -181,7 +181,7 @@ export default function Home() {
   <Link to="/tutorials">
     <a className="hover:text-gray-700">Documentation</a>
   </Link>
-  <Link to="/tools-update">
+  <Link to="/tools">
     <a className="hover:text-gray-700">Tools-update</a>
   </Link>
   <Link to="/company-regulations">
