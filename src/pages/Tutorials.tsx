@@ -34,6 +34,11 @@ export default function Tutorials() {
       title: "Tutorial Analisa Anomali",
       description: "Penggunaan modul analisa anomali keseluruhan.",
       url: "https://drive.google.com/uc?export=download&id=1woc7ECpSd07cxNd264VpACnpQprzsurv"
+    },
+    {
+      title: "Tutorial pembuatan laporan",
+      description: "Ini adalah guidelines atau ketentuan mengenai pembuatan laporan",
+      url: "https://docs.google.com/document/d/15dE7Cd7F_hZmEcdO59CILLgdLqx4yN2fvukEEeWeLLc/edit?usp=sharing"
     }
   ];
 
