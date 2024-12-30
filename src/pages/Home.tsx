@@ -21,7 +21,7 @@ export default function Home() {
   const handleViewUpdate = () => {
     localStorage.setItem('announcementSeen', 'true');
     setShowAnnouncement(false);
-    navigate('/company-regulations'); //menavigasi ke update terbaru  
+    navigate('/tools'); //menavigasi ke update terbaru  
   };
 
   const handleDismiss = () => {
@@ -34,7 +34,7 @@ export default function Home() {
       { showAnnouncement && (
       <AnnouncementPopup
         title="New update!"
-        message="There is a new update regarding company regulations, it is now accessible. Click 'View Details' to learn more about the changes."
+        message="There is a new update regarding tools, it is now accessible. Click 'View Details' to learn more about the changes."
         onView={handleViewUpdate}
         onDismiss={handleDismiss}
         />
