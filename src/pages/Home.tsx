@@ -10,24 +10,36 @@ export default function Home() {
   const navigate = useNavigate();
   const [showAnnouncement, setShowAnnouncement] = useState(true);
 
-   useEffect(() => {
-    const seen = localStorage.getItem('announcementSeen');
-    console.log('Initial localStorage check:', seen);
-    if (seen === 'true') {
-      setShowAnnouncement(false);
-    }
-  }, []);
-  
-  const handleViewUpdate = () => {
-    localStorage.setItem('announcementSeen', 'true');
-    setShowAnnouncement(false);
-    navigate('/tools'); //menavigasi ke update terbaru  
-  };
+useEffect(() => {
+  const checkAnnouncement = () => {
+    const lastSeen = localStorage.getItem('announcementLastSeen');
+    
+    if (lastSeen) {
+      const lastSeenDate = new Date(parseInt(lastSeen));
+      const today = new Date();
 
-  const handleDismiss = () => {
-    localStorage.setItem('announcementSeen', 'true');
-    setShowAnnouncement(false);
+
+ const isSameDay = 
+        lastSeenDate.getDate() === today.getDate() &&
+        lastSeenDate.getMonth() === today.getMonth() &&
+        lastSeenDate.getFullYear() === today.getFullYear();
+      
+      setShowAnnouncement(!isSameDay);
+    }
   };
+  
+  checkAnnouncement();
+}, []);
+  
+const handleViewUpdate = () => {
+  localStorage.setItem('announcementLastSeen', Date.now().toString());
+  setShowAnnouncement(false);
+  navigate('/tools');
+
+const handleDismiss = () => {
+  localStorage.setItem('announcementLastSeen', Date.now().toString());
+  setShowAnnouncement(false);
+};
 
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col">
