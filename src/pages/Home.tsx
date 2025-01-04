@@ -10,36 +10,37 @@ export default function Home() {
   const navigate = useNavigate();
   const [showAnnouncement, setShowAnnouncement] = useState(true);
 
-useEffect(() => {
-  const checkAnnouncement = () => {
-    const lastSeen = localStorage.getItem('announcementLastSeen');
-    
-    if (lastSeen) {
-      const lastSeenDate = new Date(parseInt(lastSeen));
-      const today = new Date();
-
-
- const isSameDay = 
-        lastSeenDate.getDate() === today.getDate() &&
-        lastSeenDate.getMonth() === today.getMonth() &&
-        lastSeenDate.getFullYear() === today.getFullYear();
+  useEffect(() => {
+    const checkAnnouncement = () => {
+      const lastSeen = localStorage.getItem('announcementLastSeen');
       
-      setShowAnnouncement(!isSameDay);
-    }
-  };
-  
-  checkAnnouncement();
-}, []);
-  
-const handleViewUpdate = () => {
-  localStorage.setItem('announcementLastSeen', Date.now().toString());
-  setShowAnnouncement(false);
-  navigate('/tools');
+      if (lastSeen) {
+        const lastSeenDate = new Date(parseInt(lastSeen));
+        const today = new Date();
+        
+        // Check if last seen was on a different day
+        const isSameDay = 
+          lastSeenDate.getDate() === today.getDate() &&
+          lastSeenDate.getMonth() === today.getMonth() &&
+          lastSeenDate.getFullYear() === today.getFullYear();
+        
+        setShowAnnouncement(!isSameDay);
+      }
+    };
+    
+    checkAnnouncement();
+  }, []);
 
-const handleDismiss = () => {
-  localStorage.setItem('announcementLastSeen', Date.now().toString());
-  setShowAnnouncement(false);
-};
+  const handleViewUpdate = () => {
+    localStorage.setItem('announcementLastSeen', Date.now().toString());
+    setShowAnnouncement(false);
+    navigate('/tools');
+  };
+
+  const handleDismiss = () => {
+    localStorage.setItem('announcementLastSeen', Date.now().toString());
+    setShowAnnouncement(false);
+  };
 
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col">
