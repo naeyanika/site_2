@@ -15,6 +15,11 @@ export default function Tools() {
       description: "Contoh format laporan yang baik dan benar.",
       url: "https://drive.google.com/uc?export=download&id=1BAddVvqtT0ciWGan_3YR8SsRHG3gA6Ce"
     }
+    {
+      title: "Entrance, Exit, dan Berita Acara",
+      description: "Contoh format berita acara, agenda entrance dan exit meeting.",
+      url: "https://drive.google.com/uc?export=download&id=1SWTh4x1_19lFaTZX7Uz7Bwwv9jUpUmBy"
+    }
   ];
 
   return (
