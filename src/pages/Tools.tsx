@@ -16,7 +16,7 @@ export default function Tools() {
       url: "https://drive.google.com/uc?export=download&id=1BAddVvqtT0ciWGan_3YR8SsRHG3gA6Ce"
     },
     {
-      title: "Entrance, Exit, dan Berita Acara",
+      title: "Absensi dan Berita acara",
       description: "Contoh format berita acara, agenda entrance dan exit meeting.",
       url: "https://drive.google.com/uc?export=download&id=1SWTh4x1_19lFaTZX7Uz7Bwwv9jUpUmBy"
     }
