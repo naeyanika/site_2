@@ -41,7 +41,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       setProfile(existingProfile);
       return;
     }
-    
+  };
+
   useEffect(() => {
     // Get initial session
     supabase.auth.getSession().then(({ data: { session } }) => {
@@ -55,7 +56,6 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     } = supabase.auth.onAuthStateChange((_event, session) => {
       setIsAuthenticated(!!session);
       setUser(session?.user ?? null);
-
       // If we have a session, store it
       if (session) {
         supabase.auth.setSession({
@@ -74,7 +74,6 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       email,
       password,
     });
-
     if (error) {
       throw error;
     }
@@ -92,12 +91,4 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       {children}
     </AuthContext.Provider>
   );
-}
-
-export function useAuth() {
-  const context = useContext(AuthContext);
-  if (!context) {
-    throw new Error('useAuth must be used within an AuthProvider');
-  }
-  return context;
 }
