@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../contexts/AuthContext';
 import { Link, useNavigate } from 'react-router-dom';
+import { WelcomePopup } from '../components/WelcomePopup';
 import { AnnouncementPopup } from '../components/AnnouncementPopup';
 import { LogOut } from 'lucide-react';
 import '../styles/dashboard.css';
 
 export default function Home() {
-  const { logout } = useAuth();
+  const { logout, profile } = useAuth();
   const navigate = useNavigate();
   const [showAnnouncement, setShowAnnouncement] = useState(true);
+  const [showWelcome, setShowWelcome] = useState(true);
 
   useEffect(() => {
     const checkAnnouncement = () => {
