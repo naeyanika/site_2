@@ -61,12 +61,15 @@ export default function Home() {
         />
         )}
     
-    {showWelcome && profile && (
-      <WelcomePopup 
-        displayName={profile.display_name} 
-        onClose={() => setShowWelcome(false)} 
-      />
-    )}
+      {showWelcome && profile && (
+    <WelcomePopup 
+      displayName={profile.display_name} 
+      onClose={() => {
+        setShowWelcome(false);
+        setLoginSuccess(false); // Reset loginSuccess after popup is shown
+      }} 
+    />
+  )}
       
       <nav className="bg-white shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
