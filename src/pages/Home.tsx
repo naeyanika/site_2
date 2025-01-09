@@ -7,11 +7,17 @@ import { LogOut } from 'lucide-react';
 import '../styles/dashboard.css';
 
 export default function Home() {
-  const { logout, profile } = useAuth();
+  const { logout, profile, loginSuccess } = useAuth();
   const navigate = useNavigate();
   const [showAnnouncement, setShowAnnouncement] = useState(true);
   const [showWelcome, setShowWelcome] = useState(true);
 
+  useEffect(() => {
+  if (loginSuccess) {
+    setShowWelcome(true);
+  }
+}, [loginSuccess]);
+  
   useEffect(() => {
     const checkAnnouncement = () => {
       const lastSeen = localStorage.getItem('announcementLastSeen');
@@ -54,6 +60,13 @@ export default function Home() {
         onDismiss={handleDismiss}
         />
         )}
+    
+    {showWelcome && profile && (
+      <WelcomePopup 
+        displayName={profile.display_name} 
+        onClose={() => setShowWelcome(false)} 
+      />
+    )}
       
       <nav className="bg-white shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
